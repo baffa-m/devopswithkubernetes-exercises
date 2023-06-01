@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hash-log-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hash-log
+  template:
+    metadata:
+      labels:
+        app: hash-log
+    spec:
+      containers:
+        - name: hash-log
+          image: ahmad4/hash-log
